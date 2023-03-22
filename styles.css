@@ -1,0 +1,135 @@
+* { 
+    box-sizing: border-box ; 
+    margin: 0;
+    padding: 0;   
+}
+body {
+    background-color: rgb(20, 17, 26);
+    height: 100vh;
+    width: 100vw;
+}
+.board {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3,auto);
+
+}
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.cell.x,
+.cell.circle{
+    cursor: not-allowed
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7){
+    border-left: none;
+}
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9){
+    border-right: none;
+}
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+
+.cell.circle::before,
+.cell.circle::after,
+.cell.x::before,
+.cell.x::after{
+    content: "";
+    height: calc(100px * 0.15);
+    width: calc(100px * 0.9);
+    background: rgb(255, 255, 255);
+    position: absolute;
+}
+
+.cell.x::after {
+    transform: rotate(45deg);
+}
+
+.cell.x::before {
+    transform: rotate(135deg);
+}
+.cell.circle::after,.cell.circle::before {
+    height: calc(100px * 0.9);
+    border-radius: 50%;
+}
+
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.winning-message{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+}
+
+.bottom-message {
+    font-size: 2.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(41, 29, 51);
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+    -webkit-transition: all .3s ease-out;
+
+}
+.bottom-message:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(41, 29, 51);
+    -webkit-transition: all .3s ease-in;
+    
+}
+
+.winning-message-text {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.show-winner-message {
+    display: flex;
+}
+
+.panel-message {
+    display: block;
+    top: 20%;
+    left: 39%;
+    position: absolute;
+    color: white;
+    font-size: 1.7rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
