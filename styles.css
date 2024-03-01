@@ -126,7 +126,7 @@ body {
 .panel-message {
     display: block;
     top: 20%;
-    left: 39%;
+    left: calc(50% - 100px);
     position: absolute;
     color: white;
     font-size: 1.7rem;
