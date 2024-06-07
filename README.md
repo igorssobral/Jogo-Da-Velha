@@ -1,5 +1,7 @@
 # Jogo da Velha
 
+<p align="center"> <img src="https://portfolio-igor-silva-sobral.vercel.app/assets/jogodavelha-d7goDJoy.png" alt="Jogo da velha"> </p>
+
 Este projeto é um simples jogo da velha (tic-tac-toe) implementado em JavaScript. Os jogadores se revezam para marcar células em uma grade 3x3, e o objetivo é ser o primeiro a alinhar três de seus símbolos (X ou O) horizontalmente, verticalmente ou diagonalmente.
 
 ## Funcionalidades
